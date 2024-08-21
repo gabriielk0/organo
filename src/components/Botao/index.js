@@ -7,3 +7,5 @@ const Botao = (props) => {
         </button>
     )
 }
+
+export default Botao
