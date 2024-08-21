@@ -3,7 +3,7 @@ import './ListaSuspensa.css'
 const ListaSuspensa = (props) => {
     return (
         <div className='lista-suspensa'>
-            <labe>{props.label}</labe>
+            <label>{props.label}</label>
             <select>
                 {props.itens.map(item => {
                     return <option kay={item}>{item}</option>}
