@@ -1,13 +1,14 @@
 import { useState } from "react";
 import Banner from "./components/Banner";
 import Formulario from "./components/Formulario";
+import Time from "./components/Time";
 
 function App() {
-  const [colaborador, setColaboradores] = useState([]);
+  const [colaboradores, setColaboradores] = useState([]);
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     console.log(colaborador);
-    setColaboradores([...setColaboradores, colaborador]);
+    setColaboradores([...colaboradores, colaborador]);
   };
 
   return (
@@ -18,6 +19,9 @@ function App() {
           aoNovoColaboradorAdicionado(colaborador)
         }
       />
+      <Time nome="Programação" />
+      <Time nome="Front-End" />
+      <Time nome="Data Science" />
     </div>
   );
 }
