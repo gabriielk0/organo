@@ -1,5 +1,22 @@
 .rodape {
+    display: flex;
     background-color:  #6278F7;
-    text-align: center;
-    justify-content: space-around;
+    color: #FFF;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px;
+}
+
+.rodape ul li {
+    display: inline-block;
+    margin-right: 32px;
+}
+
+.rodape ul li:last-child {
+    margin-right: 0;
+}
+
+.rodape p{
+    font-size: 16px;
+    font-weight: 700;
 }
