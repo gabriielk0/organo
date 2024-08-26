@@ -2,7 +2,7 @@ import Colaborador from "../Colaborador";
 import "./Time.css";
 
 const Time = (props) => {
-  const css = { backgroundColor: props.corSecundaria };
+  const css = {backgroundImage: 'url(/images/fundo.png)' ,backgroundColor: props.corSecundaria };
 
   return (
     props.colaboradores.length > 0 && (
