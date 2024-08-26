@@ -1,22 +1,22 @@
 .rodape {
-    display: flex;
-    background-color:  #6278F7;
-    color: #FFF;
-    align-items: center;
-    justify-content: space-between;
-    padding: 80px;
+  display: flex;
+  background-color: #6278f7;
+  color: #fff;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px;
 }
 
 .rodape ul li {
-    display: inline-block;
-    margin-right: 32px;
+  display: inline-block;
+  margin-right: 32px;
 }
 
 .rodape ul li:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
-.rodape p{
-    font-size: 16px;
-    font-weight: 700;
+.rodape p {
+  font-size: 16px;
+  font-weight: 700;
 }

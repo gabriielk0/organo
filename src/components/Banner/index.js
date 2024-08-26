@@ -1,12 +1,15 @@
-import './Banner.css'
+import "./Banner.css";
 
 function Banner() {
-    // JSX
-    return(
-        <header className='banner'>
-            <img src="/images/banner.png" alt="Banner principal da página do Organo"/>
-        </header>
-    )
+  // JSX
+  return (
+    <header className="banner">
+      <img
+        src="/images/banner.png"
+        alt="Banner principal da página do Organo"
+      />
+    </header>
+  );
 }
 
-export default Banner
+export default Banner;
