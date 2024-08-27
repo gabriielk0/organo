@@ -2,7 +2,7 @@ import Colaborador from "../Colaborador";
 import "./Time.css";
 
 const Time = ( time, colaboradores, aoDeletar) => {
-  const css = {backgroundImage: 'url(/images/fundo.png)' ,backgroundColor: props.corSecundaria };
+  const css = {backgroundImage: 'url(/images/fundo.png)' ,backgroundColor: time.corSecundaria };
 
   return (
     colaboradores.length > 0 && (
