@@ -1,15 +1,14 @@
 import Colaborador from "../Colaborador";
 import "./Time.css";
 
-const Time = ( time, colaboradores, aoDeletar) => {
+const Time = ({time, colaboradores, aoDeletar}) => {
   const css = {backgroundImage: 'url(/images/fundo.png)' ,backgroundColor: time.corSecundaria };
-
   return (
     colaboradores.length > 0 && (
       <section className="time" style={css}>
         <input value={time.corSecundaria} type='color' className='input-cor' />
         <h3 style={{ borderColor: time.corPrimaria }}>{time.nome}</h3>
-        <div className="colaboradores">
+        <div className='colaboradores'>
           {colaboradores.map((colaborador, indice) => {
             console.log('renderizando o colaborador');
             return <Colaborador
@@ -18,7 +17,7 @@ const Time = ( time, colaboradores, aoDeletar) => {
             cargo={colaborador.cargo}
             imagem={colaborador.imagem}
             corDeFundo={time.corPrimaria}
-            aoDeletar={(aoDeletar) => {aoDeletar}}
+            aoDeletar={aoDeletar}
           />
           })}
         </div>
