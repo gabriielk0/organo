@@ -18,7 +18,7 @@ const Time = ( time, colaboradores, aoDeletar) => {
             cargo={colaborador.cargo}
             imagem={colaborador.imagem}
             corDeFundo={time.corPrimaria}
-            aoDeletar={(aoDeletar) => {}}
+            aoDeletar={(aoDeletar) => {aoDeletar}}
           />
           })}
         </div>
