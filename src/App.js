@@ -5,48 +5,57 @@ import Time from "./components/Time";
 import Rodape from "./components/Rodape";
 
 function App() {
-  const times = [
+  const [times, setTimes] = useState([
     {
       nome: "Programação",
-      corPrimaria: "#57C278",
-      corSecundaria: "#D9F7E9",
+      corPrimaria: "#D9F7E9",
+      corSecundaria: "#57C278",
     },
     {
       nome: "Front-End",
-      corPrimaria: "#82CFFA",
-      corSecundaria: "#E9F9FF",
+      corPrimaria: "#E9F9FF",
+      corSecundaria: "#82CFFA",
     },
     {
       nome: "Data Science",
-      corPrimaria: "#A6D157",
-      corSecundaria: "#F0F8E2",
+      corPrimaria: "#F0F8E2",
+      corSecundaria: "#A6D157",
     },
     {
       nome: "Devops",
-      corPrimaria: "#E06B69",
-      corSecundaria: "#FDE7E8",
+      corPrimaria: "#FDE7E8",
+      corSecundaria: "#E06B69",
     },
     {
       nome: "UX e Design",
-      corPrimaria: "#DB6EBF",
-      corSecundaria: "#FAE9F5",
+      corPrimaria: "#FAE9F5",
+      corSecundaria: "#DB6EBF",
     },
     {
       nome: "Mobile",
-      corPrimaria: "#FFBA05",
-      corSecundaria: "#FFF5D9",
+      corPrimaria: "#FFF5D9",
+      corSecundaria: "#FFBA05",
     },
     {
       nome: "Inovação e Gestão",
-      corPrimaria: "#FF8A29",
-      corSecundaria: "#FFEEDF",
+      corPrimaria: "#FFEEDF",
+      corSecundaria: "#FF8A29",
     },
-  ];
+  ]);
 
   const [colaboradores, setColaboradores] = useState([]);
 
   function deletarColaborador() {
     console.log('deletando colaborador')
+  }
+
+  function mudarCorDoTime(cor, nome) {
+    setTimes(times.map(time => {
+      if(time.nome === nome) {
+        time.corSecundaria = cor
+      }
+      return time;
+    }));
   }
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
@@ -65,6 +74,7 @@ function App() {
 
       {times.map((time, indice) => (
         <Time
+          mudarCor={mudarCorDoTime}
           key={indice}
           time={time}
           nome={time.nome}
