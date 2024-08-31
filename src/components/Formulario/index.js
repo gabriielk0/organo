@@ -16,6 +16,7 @@ const Formulario = (props) => {
     evento.preventDefault();
     props.aoColaboradorCadastrado({
       nome,
+      favorito: false,
       cargo,
       imagem,
       time,

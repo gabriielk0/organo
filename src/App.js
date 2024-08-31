@@ -75,6 +75,14 @@ function App() {
     setTimes([...times, { ...novoTime, id: uuidv4() }]);
   }
 
+  function resolverFavorito(id) {
+    setColaboradores(colaboradores.map(colaborador => {
+      if(colaborador.id === id) colaborador.favorito = !colaborador.favorito;
+      return colaborador
+    
+    }))
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -85,9 +93,11 @@ function App() {
           aoNovoColaboradorAdicionado(colaborador)
         }
       />
-
+      <section className="times">
+      <h1>Minha Organização</h1>
       {times.map((time, indice) => (
         <Time
+          aoFavoritar={resolverFavorito}
           mudarCor={mudarCorDoTime}
           key={indice}
           time={time}
@@ -97,6 +107,7 @@ function App() {
           aoDeletar={deletarColaborador}
         />
       ))}
+      </section>
       <Rodape />
     </div>
   );
