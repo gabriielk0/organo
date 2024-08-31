@@ -2,15 +2,15 @@ import Colaborador from "../Colaborador";
 import "./Time.css";
 import hexToRgba from "hex-to-rgba";
 
-const Time = ({ time, colaboradores, aoDeletar, mudarCor}) => {
+const Time = ({ time, colaboradores, aoDeletar, mudarCor }) => {
   const css = {
     backgroundImage: "url(/images/fundo.png)",
     backgroundColor: hexToRgba(time.cor, "0.6"),
   };
 
   const handleDelete = (colaboradorID, index) => {
-    aoDeletar(colaboradorID, index)
-  }
+    aoDeletar(colaboradorID, index);
+  };
   return (
     colaboradores.length > 0 && (
       <section className="time" style={css}>

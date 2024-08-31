@@ -3,7 +3,7 @@ import Banner from "./components/Banner";
 import Formulario from "./components/Formulario";
 import Time from "./components/Time";
 import Rodape from "./components/Rodape";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [times, setTimes] = useState([
@@ -47,8 +47,12 @@ function App() {
   const [colaboradores, setColaboradores] = useState([]);
 
   function deletarColaborador(colaboradorID) {
-    console.log('deletando colaborador: ', colaboradorID);
-    setColaboradores(prevColaboradores => prevColaboradores.filter(colaborador => colaborador.id !== colaboradorID))
+    console.log("deletando colaborador: ", colaboradorID);
+    setColaboradores((prevColaboradores) =>
+      prevColaboradores.filter(
+        (colaborador) => colaborador.id !== colaboradorID
+      )
+    );
   }
 
   function mudarCorDoTime(cor, id) {
@@ -63,14 +67,19 @@ function App() {
   }
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
-    const novoColaborador = {...colaborador, id: uuidv4()}
+    const novoColaborador = { ...colaborador, id: uuidv4() };
     setColaboradores([...colaboradores, novoColaborador]);
   };
+
+  function cadastrarTime(novoTime) {
+    setTimes([...times, { ...novoTime, id: uuidv4() }]);
+  }
 
   return (
     <div className="App">
       <Banner />
       <Formulario
+        cadastrarTime={cadastrarTime}
         times={times.map((time) => time.nome)}
         aoColaboradorCadastrado={(colaborador) =>
           aoNovoColaboradorAdicionado(colaborador)
